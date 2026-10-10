@@ -3,95 +3,416 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Política de Privacidade</title>
+    <title>Política de Privacidade e Termos de Uso · CuratioLog</title>
+    <meta
+      name="description"
+      content="Política de Privacidade e Termos de Uso do aplicativo CuratioLog, um registro pessoal de horários de medicação."
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <script>
+      (function () {
+        var m = window.matchMedia("(prefers-color-scheme: dark)");
+        function apply() {
+          document.documentElement.setAttribute(
+            "data-bs-theme",
+            m.matches ? "dark" : "light",
+          );
+        }
+        apply();
+        m.addEventListener("change", apply);
+      })();
+    </script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    />
+
+    <style>
+      :root,
+      [data-bs-theme="light"] {
+        --bs-primary: #1d5fd1;
+        --bs-primary-rgb: 29, 95, 209;
+        --bs-link-color: #1d5fd1;
+        --bs-link-color-rgb: 29, 95, 209;
+        --bs-link-hover-color: #174fb0;
+        --bs-link-hover-color-rgb: 23, 79, 176;
+        --bs-body-bg: #f4f8ff;
+        --bs-body-bg-rgb: 244, 248, 255;
+        --bs-body-color: #0f2342;
+        --bs-body-color-rgb: 15, 35, 66;
+        --bs-secondary-color: #51627f;
+        --bs-border-color: #d6e0f0;
+        --bs-primary-bg-subtle: #e3edfd;
+        --bs-primary-border-subtle: #b9d0f7;
+        --bs-primary-text-emphasis: #0f2f6b;
+      }
+
+      [data-bs-theme="dark"] {
+        --bs-primary: #6ea2ff;
+        --bs-primary-rgb: 110, 162, 255;
+        --bs-link-color: #6ea2ff;
+        --bs-link-color-rgb: 110, 162, 255;
+        --bs-link-hover-color: #9bc0ff;
+        --bs-link-hover-color-rgb: 155, 192, 255;
+        --bs-body-bg: #0b1424;
+        --bs-body-bg-rgb: 11, 20, 36;
+        --bs-body-color: #e6eefb;
+        --bs-body-color-rgb: 230, 238, 251;
+        --bs-secondary-color: #9db0ce;
+        --bs-border-color: #22365a;
+        --bs-primary-bg-subtle: #14274a;
+        --bs-primary-border-subtle: #1f3f78;
+        --bs-primary-text-emphasis: #a9c8ff;
+      }
+
+      :root {
+        --bs-body-font-family: "Segoe UI", sans-serif;
+        --bs-body-font-size: 1.0625rem;
+        --bs-body-line-height: 1.7;
+        scroll-padding-top: 1.5rem;
+      }
+
+      h1,
+      h2,
+      h3,
+      .brand {
+        font-family: "Segoe UI" sans-serif;
+      }
+
+      main li {
+        margin-bottom: 0.4rem;
+        padding-left: 0.16rem;
+      }
+
+      main li::marker {
+        color: var(--bs-primary);
+      }
+
+      .toc {
+        top: 1.5rem;
+      }
+
+      .toc .nav-link {
+        color: var(--bs-secondary-color);
+        padding: 0.35rem 0;
+        line-height: 1.4;
+      }
+
+      .toc .nav-link:hover {
+        color: var(--bs-body-color);
+      }
+
+      .toc .nav-link.active {
+        color: var(--bs-primary);
+        font-weight: 600;
+      }
+
+      @media (min-width: 992px) {
+        .toc {
+          --bs-card-border-width: 0;
+          --bs-card-bg: transparent;
+          --bs-card-spacer-x: 0;
+          --bs-card-spacer-y: 0;
+        }
+
+        .toc .nav {
+          border-left: 2px solid var(--bs-border-color);
+        }
+
+        .toc .nav-link {
+          padding-left: 1rem;
+          margin-left: -2px;
+          border-left: 2px solid transparent;
+        }
+
+        .toc .nav-link.active {
+          border-left-color: var(--bs-primary);
+        }
+      }
+
+      p {
+        text-align: justify;
+      }
+    </style>
   </head>
-  <body class="bg-light">
-    <div class="container py-5">
-      <div class="text-end mb-3">
-        <span class="badge bg-secondary"> Última atualização: 25/03/2026 </span>
-      </div>
 
-      <div class="text-center mb-5">
-        <h1 class="fw-bold text-primary">Política de Privacidade</h1>
-        <p class="text-muted">Aplicativo de registro de medicação</p>
-      </div>
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#toc"
+    data-bs-root-margin="0px 0px -65%"
+    data-bs-smooth-scroll="true"
+    tabindex="0"
+  >
+    <header id="mainheader" class="container pt-5 pb-4">
+      <p
+        class="brand d-inline-flex align-items-center gap-2 fw-bold fs-5 text-primary mb-3"
+      >
+        <i class="bi bi-capsule-pill fs-4" aria-hidden="true"></i>
+        CuratioLog
+      </p>
+      <h1 class="display-5 fw-bold mb-3">
+        Política de Privacidade e Termos de Uso
+      </h1>
+      <p class="lead text-body-secondary mb-3">
+        O CuratioLog é um registro pessoal de horários de medicação. Esta página
+        explica, em linguagem simples, o que acontece com seus dados e quais são
+        os limites de responsabilidade do aplicativo.
+      </p>
+      <p class="small text-body-secondary mb-0">
+        Última atualização: 10/10/2026
+      </p>
+    </header>
 
-      <div class="card shadow-sm p-4 mb-4">
-        <h5>1. Sobre o Aplicativo</h5>
-        <p>
-          Este aplicativo é uma ferramenta pessoal para registro de horários de
-          medicação. No momento, não possui fins comerciais e não há venda de
-          serviços ou produtos.
-        </p>
-      </div>
+    <div class="container pt-4 pb-5">
+      <div class="row g-4 g-lg-5">
+        <aside class="col-lg-3">
+          <nav
+            id="toc"
+            class="toc sticky-lg-top card card-body d-print-none"
+            aria-label="Índice"
+          >
+            <p class="fw-semibold text-body-secondary mb-2">Nesta página</p>
+            <div class="nav flex-column">
+              <a class="nav-link" href="#sobre">Sobre o aplicativo</a>
+              <a class="nav-link" href="#dados">Dados e privacidade</a>
+              <a class="nav-link" href="#permissoes">Permissões e segurança</a>
+              <a class="nav-link" href="#usuario"
+                >Responsabilidades do usuário</a
+              >
+              <a class="nav-link" href="#medico">Aviso médico</a>
+              <a class="nav-link" href="#como-esta">Software "como está"</a>
+              <a class="nav-link" href="#limitacao"
+                >Limitação de responsabilidade</a
+              >
+              <a class="nav-link" href="#alteracoes">Alterações e aceitação</a>
+              <a class="nav-link" href="#contato">Contato</a>
+            </div>
+          </nav>
+        </aside>
 
-      <div class="card shadow-sm p-4 mb-4">
-        <h5>2. Coleta, armazenamento e compartilhamento de dados</h5>
-        <ul>
-          <li>
-            Este aplicativo não coleta dados pessoais nem compartilha dados com
-            terceiros.
-          </li>
-          <li>
-            Todos os dados são armazenados localmente no dispositivo do usuário.
-          </li>
-          <li>Nenhuma informação é transmitida para servidores externos.</li>
-        </ul>
-      </div>
+        <main class="col-lg-9">
+          <div class="prose">
+            <section id="sobre" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">1</span>Sobre o aplicativo
+              </h2>
+              <p>
+                O CuratioLog é uma ferramenta pessoal para registrar os horários
+                em que você toma seus medicamentos. Ele não tem fins comerciais:
+                não há venda de produtos ou serviços, nem anúncios.
+              </p>
+              <a
+                class="btn btn-primary"
+                href="https://play.google.com/store/apps/details?id=br.jj.curatiolog"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="bi bi-google-play me-2" aria-hidden="true"></i>Ver na
+                Google Play
+              </a>
+            </section>
 
-      <div class="card shadow-sm p-4 mb-4">
-        <h5>3. Permissões e Segurança</h5>
-        <ul>
-          <li>
-            O aplicativo não requer permissões sensíveis além das necessárias
-            para seu funcionamento básico.
-          </li>
-          <li>
-            A segurança das informações depende do próprio dispositivo do
-            usuário.
-          </li>
-        </ul>
-      </div>
+            <section id="dados" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">2</span>Dados e privacidade
+              </h2>
+              <ul class="ps-4 mb-0">
+                <li>
+                  O aplicativo <strong>não coleta dados pessoais</strong> e
+                  <strong>não compartilha dados com terceiros</strong>.
+                </li>
+                <li>
+                  Todas as informações que você registra ficam armazenadas
+                  <strong>localmente, no seu dispositivo</strong>.
+                </li>
+                <li>
+                  Nenhuma informação é transmitida para servidores externos. O
+                  desenvolvedor não tem acesso ao que você registra.
+                </li>
+                <li>
+                  Como os dados permanecem no seu aparelho, é você quem controla
+                  o que fica guardado: ao apagar o aplicativo ou os seus dados,
+                  os registros são removidos.
+                </li>
+              </ul>
+            </section>
 
-      <div class="card shadow-sm p-4 mb-4">
-        <h5>4. Uso e Boas Práticas</h5>
-        <ul>
-          <li>
-            O uso do aplicativo é de responsabilidade exclusiva do usuário.
-          </li>
-          <li>Manter seu dispositivo seguro.</li>
-          <li>
-            Proteger o acesso ao seu dispositivo contra uso não autorizado.
-          </li>
-          <li>Realizar backup dos dados, se considerar necessário.</li>
-          <li>Utilizar o aplicativo de forma consciente e adequada.</li>
-        </ul>
-      </div>
+            <section id="permissoes" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">3</span>Permissões e segurança
+              </h2>
+              <ul class="ps-4 mb-0">
+                <li>
+                  O aplicativo não solicita permissões sensíveis, apenas as
+                  necessárias para o funcionamento básico.
+                </li>
+                <li>
+                  A segurança das informações depende do seu dispositivo: senha,
+                  biometria, bloqueio de tela e atualizações do sistema.
+                </li>
+              </ul>
+            </section>
 
-      <div class="card shadow-sm p-4">
-        <h5>5. Isenção de Responsabilidade</h5>
-        <ul>
-          <li>
-            O aplicativo não garante a precisão das informações inseridas.
-          </li>
-          <li>O aplicativo não substitui orientação médica.</li>
-          <li>
-            O desenvolvedor não se responsabiliza por quaisquer danos
-            decorrentes do uso do aplicativo.
-          </li>
-        </ul>
+            <section id="usuario" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">4</span>Responsabilidades do usuário
+              </h2>
+              <p>
+                O uso do aplicativo é de responsabilidade exclusiva do usuário.
+                Recomenda-se:
+              </p>
+              <ul class="ps-4 mb-0">
+                <li>Manter o dispositivo seguro e atualizado;</li>
+                <li>
+                  Proteger o acesso ao aparelho contra uso não autorizado;
+                </li>
+                <li>Fazer backup dos dados, se considerar necessário;</li>
+                <li>
+                  Conferir as informações registradas e usar o aplicativo de
+                  forma consciente e adequada.
+                </li>
+              </ul>
+            </section>
+
+            <section id="medico" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">5</span>Aviso médico
+              </h2>
+              <div
+                class="alert alert-primary border-0 border-start border-5 border-primary rounded-start-1 rounded-end-3 p-4 mb-0"
+                role="note"
+              >
+                <h3 class="alert-heading h5 fw-bold">
+                  O CuratioLog não substitui orientação médica.
+                </h3>
+                <p class="mb-0">
+                  O aplicativo é apenas um registro de horários. Ele não indica
+                  doses, não avalia tratamentos e não faz diagnósticos. Siga
+                  sempre as orientações do seu médico, farmacêutico ou outro
+                  profissional de saúde, e nunca altere ou interrompa um
+                  tratamento com base apenas nas informações do aplicativo.
+                </p>
+              </div>
+            </section>
+
+            <section id="como-esta" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">6</span>Software "como está"
+              </h2>
+              <div
+                class="alert alert-primary border-0 border-start border-5 border-primary rounded-start-1 rounded-end-3 p-4 mb-0"
+                role="note"
+              >
+                <h3 class="alert-heading h5 fw-bold">
+                  Fornecido "no estado em que se encontra" (as is).
+                </h3>
+                <p>
+                  O CuratioLog é disponibilizado <strong>"como está"</strong> e
+                  <strong>"conforme disponível"</strong>, sem garantias de
+                  qualquer tipo, expressas ou implícitas. Isso inclui, sem
+                  limitação, garantias de funcionamento ininterrupto ou livre de
+                  erros, de precisão das informações, de adequação a uma
+                  finalidade específica e de compatibilidade com todos os
+                  dispositivos e versões de sistema.
+                </p>
+                <p class="mb-0">
+                  O desenvolvedor não se compromete a manter, atualizar,
+                  corrigir ou continuar oferecendo o aplicativo, e pode
+                  modificá-lo ou descontinuá-lo a qualquer momento, sem aviso
+                  prévio.
+                </p>
+              </div>
+            </section>
+
+            <section id="limitacao" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">7</span>Limitação de responsabilidade
+              </h2>
+              <p>
+                Na máxima extensão permitida pela legislação aplicável, o
+                desenvolvedor <strong>não será responsável</strong> por
+                quaisquer danos diretos, indiretos, incidentais, morais,
+                materiais ou de qualquer outra natureza decorrentes do uso ou da
+                impossibilidade de uso do aplicativo, incluindo, por exemplo:
+              </p>
+              <ul class="ps-4">
+                <li>
+                  Esquecimento, atraso, duplicidade ou erro na tomada de
+                  medicamentos;
+                </li>
+                <li>
+                  Informações registradas incorretamente, perdidas ou apagadas;
+                </li>
+                <li>
+                  Falhas, erros, interrupções ou incompatibilidades do
+                  aplicativo;
+                </li>
+                <li>
+                  Acesso indevido aos dados por falta de proteção do
+                  dispositivo;
+                </li>
+                <li>
+                  Decisões de saúde tomadas com base nas informações do
+                  aplicativo.
+                </li>
+              </ul>
+              <p class="mb-0">
+                Ao utilizar o CuratioLog, você reconhece que o faz por sua conta
+                e risco e concorda em <strong>isentar o desenvolvedor</strong>
+                de reclamações, ações judiciais, perdas e responsabilidades
+                relacionadas ao uso do aplicativo.
+              </p>
+            </section>
+
+            <section id="alteracoes" class="pb-5 mb-5 border-bottom">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">8</span>Alterações e aceitação
+              </h2>
+              <p>
+                Esta política pode ser atualizada de tempos em tempos, por
+                exemplo para refletir melhorias no aplicativo ou mudanças na
+                legislação. Quando isso acontecer, a data de última atualização,
+                no topo desta página, será ajustada.
+              </p>
+              <p class="mb-0">
+                Ao usar o CuratioLog, entendemos que você está de acordo com os
+                termos descritos aqui. Se tiver qualquer dúvida ou discordar de
+                algum ponto, é só entrar em contato pelo e-mail da seção
+                seguinte.
+              </p>
+            </section>
+
+            <section id="contato">
+              <h2 class="h3 fw-semibold d-flex gap-3 align-items-baseline mb-3">
+                <span class="text-primary">9</span>Contato
+              </h2>
+              <p class="mb-0">
+                Dúvidas sobre esta política? Escreva para
+                <a href="mailto:jjoaovitor7@outlook.com.br"
+                  >jjoaovitor7@outlook.com.br</a
+                >.
+              </p>
+            </section>
+          </div>
+        </main>
       </div>
     </div>
+
+    <footer class="border-top py-4 text-body-secondary small">
+      <div class="container">
+        <p class="mb-0">© 2026 CuratioLog. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
