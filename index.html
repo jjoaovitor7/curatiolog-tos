@@ -97,48 +97,6 @@
         color: var(--bs-primary);
       }
 
-      .toc {
-        top: 1.5rem;
-      }
-
-      .toc .nav-link {
-        color: var(--bs-secondary-color);
-        padding: 0.35rem 0;
-        line-height: 1.4;
-      }
-
-      .toc .nav-link:hover {
-        color: var(--bs-body-color);
-      }
-
-      .toc .nav-link.active {
-        color: var(--bs-primary);
-        font-weight: 600;
-      }
-
-      @media (min-width: 992px) {
-        .toc {
-          --bs-card-border-width: 0;
-          --bs-card-bg: transparent;
-          --bs-card-spacer-x: 0;
-          --bs-card-spacer-y: 0;
-        }
-
-        .toc .nav {
-          border-left: 2px solid var(--bs-border-color);
-        }
-
-        .toc .nav-link {
-          padding-left: 1rem;
-          margin-left: -2px;
-          border-left: 2px solid transparent;
-        }
-
-        .toc .nav-link.active {
-          border-left-color: var(--bs-primary);
-        }
-      }
-
       p {
         text-align: justify;
       }
@@ -175,11 +133,7 @@
     <div class="container pt-4 pb-5">
       <div class="row g-4 g-lg-5">
         <aside class="col-lg-3">
-          <nav
-            id="toc"
-            class="toc sticky-lg-top card card-body d-print-none"
-            aria-label="Índice"
-          >
+          <nav id="toc" class="card card-body d-print-none" aria-label="Índice">
             <p class="fw-semibold text-body-secondary mb-2">Nesta página</p>
             <div class="nav flex-column">
               <a class="nav-link" href="#sobre">Sobre o aplicativo</a>
